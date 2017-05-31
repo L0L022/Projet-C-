@@ -35,3 +35,10 @@ void Forme:: ecrire (ostream & os) const
 {
 	os << couleur<<""<<ancre;
 }
+
+Forme *Forme::charger(iostream & is)
+{
+	// je ne sais pas comment c'est fait dans la correction
+	// mais je trouve ça étrange que ça soit dans la classe Forme
+	// à discuter
+}

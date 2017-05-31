@@ -25,7 +25,7 @@ class Forme{
 	   virtual void dessiner (EZWindow & f, bool isActive= false)const;
 	   void ecrire(ostream & os);
 	   friend ostream & operator << (ostream & os, const Forme & forme);
-	   virtual double perimetre() const;
+	   virtual double perimetre() const = 0;
 	   static Forme *charger(iostream & is);
 };
 #endif

@@ -12,8 +12,8 @@ Formes::~Formes()
   for(size_t i=0; i<nbformes; ++i)
   {
     delete formes[i];
-    delete [] formes;
   }
+  delete [] formes;
 }
 
 void Formes::dessiner(EZWindow & w)
@@ -57,6 +57,12 @@ ostream & operator << (ostream & os, const Formes & fs)
   return os;
 }
 
+void Formes::sauver(ostream & os) const
+{
+  os << nbformes;
+  os << *this;
+}
+
 void Formes::charger(iostream & is)
 {
   for (size_t i=0; i<nbformes; ++i)
@@ -65,7 +71,7 @@ void Formes::charger(iostream & is)
   }
   nbformes = 0;
   size_t nb=0;
-  is << nb;
+  is >> nb;
   for(size_t i=0; i<nb;++i)
   {
     ajouter(Forme::charger(is));
